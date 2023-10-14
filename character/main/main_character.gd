@@ -38,7 +38,7 @@ func _physics_process(_delta: float) -> void:
 
 		create_tween().tween_property(self, 'velocity', Vector2(direction_x, direction_y).normalized() * defaultSpeed, 0.3)
 
-	print(velocity)
+#	print(velocity)
 #	velocity = Vector2(direction_x, direction_y).normalized() * defaultSpeed
 
 	move_and_slide()
