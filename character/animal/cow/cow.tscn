@@ -38,23 +38,6 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_syc0i"]
-resource_name = "Walk"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FreeCowSprites:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [3, 4]
-}
-
 [sub_resource type="Animation" id="Animation_vpnnt"]
 resource_name = "Stay"
 length = 0.4
@@ -72,6 +55,23 @@ tracks/0/keys = {
 "values": [0, 2]
 }
 
+[sub_resource type="Animation" id="Animation_syc0i"]
+resource_name = "Walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FreeCowSprites:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f81as"]
 _data = {
 "Blink": SubResource("Animation_cxh77"),
@@ -82,6 +82,8 @@ _data = {
 
 [node name="Cow" type="CharacterBody2D"]
 position = Vector2(17.775, 17.015)
+collision_layer = 4
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_xodfi")
 

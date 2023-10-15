@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const defaultSpeed = 50.0
+const defaultSpeed = 60.0
 enum DirectionEnum {up, down, left, right}
 
 const animationMap = {
@@ -36,10 +36,7 @@ func _physics_process(_delta: float) -> void:
 		else:
 			$Character/AnimationPlayer.play(animationMap.run[direction])
 
-		create_tween().tween_property(self, 'velocity', Vector2(direction_x, direction_y).normalized() * defaultSpeed, 0.3)
-
-#	print(velocity)
-#	velocity = Vector2(direction_x, direction_y).normalized() * defaultSpeed
+		create_tween().tween_property(self, 'velocity', Vector2(direction_x, direction_y).normalized() * defaultSpeed, 0.2)
 
 	move_and_slide()
 
@@ -51,27 +48,3 @@ func get_direction(direction_x, direction_y) -> DirectionEnum:
 	if direction_x < 0: last_direction = DirectionEnum.left
 	if direction_x > 0: last_direction = DirectionEnum.right
 	return last_direction
-
-#const JUMP_VELOCITY = -400.0
-#
-## Get the gravity from the project settings to be synced with RigidBody nodes.
-#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-#
-#func _physics_process(delta):
-#	# Add the gravity.
-#	if not is_on_floor():
-#		velocity.y += gravity * delta
-#
-#	# Handle Jump.
-#	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-#		velocity.y = JUMP_VELOCITY
-#
-#	# Get the input direction and handle the movement/deceleration.
-#	# As good practice, you should replace UI actions with custom gameplay actions.
-#	var direction = Input.get_axis("ui_left", "ui_right")
-#	if direction:
-#		velocity.x = direction * SPEED
-#	else:
-#		velocity.x = move_toward(velocity.x, 0, SPEED)
-#
-#	move_and_slide()

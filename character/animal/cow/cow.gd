@@ -28,7 +28,7 @@ const animationMap = {
 var cow_state: CowState = CowState.stay
 var is_in_state_progress: bool = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	update_cow_state()
 	move_and_slide()
 
@@ -45,7 +45,7 @@ func update_cow_state():
 		if cow_state == CowState.stay:
 			print('CowState.stay')
 			$ChangeStateTimer.start(0.8)
-			create_tween().tween_property(self, 'velocity', Vector2(0, 0), 0.3)
+			create_tween().tween_property(self, 'velocity', Vector2(0, 0), 0.2)
 			
 		if cow_state == CowState.walk:
 			var is_right: bool = randi() % 2 == 0

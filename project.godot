@@ -24,7 +24,8 @@ window/stretch/scale=4.0
 [layer_names]
 
 2d_physics/layer_1="Character"
-2d_physics/layer_2="Obstacle"
+2d_physics/layer_2="Static obstacle"
+2d_physics/layer_3="Live Object"
 
 [rendering]
 
